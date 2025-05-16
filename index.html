@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>To-Do List <button id="themeToggle">🌓</button></h1>    
+
+    <div class="task-input">
+      <input id="title" type="text" placeholder="Task title" required>
+      <input id="desc" type="text" placeholder="Description (optional)">
+      <input id="due" type="date">
+      <button onclick="addTask()">Add</button>
+
+    </div>
+
+    <div class="filters">
+      <button onclick="filterTasks('all')">All</button>
+      <button onclick="filterTasks('incomplete')">Pending</button>
+      <button onclick="filterTasks('complete')">Completed</button>
+    </div>
+
+    <div class="task-lists">
+      <div class="list" ondrop="drop(event, false)" ondragover="allowDrop(event)">
+        <h2>📋 Incomplete</h2>
+        <div id="incomplete"></div>
+      </div>
+      <div class="list" ondrop="drop(event, true)" ondragover="allowDrop(event)">
+        <h2>✅ Completed</h2>
+        <div id="complete"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
